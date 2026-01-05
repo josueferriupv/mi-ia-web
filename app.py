@@ -9,9 +9,6 @@ st.set_page_config(page_title="IA Digit Recognizer")
 st.title("🔢 Reconocedor de Dígitos en Tiempo Real")
 st.write("Dibuja un número del 0 al 9 en el recuadro negro.")
 
-import os
-st.write("¿Existe el archivo?:", os.path.exists('modelo_mnist.keras'))
-st.write("Archivos en la carpeta:", os.listdir())
 
 # 1. Cargar el modelo guardado
 @st.cache_resource
@@ -48,4 +45,5 @@ if canvas_result.image_data is not None:
         
 
     st.bar_chart(pred[0]) # Visualización de probabilidades
+
 
