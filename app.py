@@ -12,7 +12,7 @@ st.write("Dibuja un número del 0 al 9 en el recuadro negro.")
 # 1. Cargar el modelo guardado
 @st.cache_resource
 def load_my_model():
-    return tf.keras.models.load_model('modelo_mnist.h5')
+    return tf.keras.models.load_model('modelo_mnist.keras')
 
 model = load_my_model()
 
@@ -42,4 +42,5 @@ if canvas_result.image_data is not None:
     else:
         st.success(f"✅ Confianza alta: {confianza:.2%}")
         
+
     st.bar_chart(pred[0]) # Visualización de probabilidades
